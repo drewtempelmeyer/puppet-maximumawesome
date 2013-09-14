@@ -1,9 +1,10 @@
 class maximumawesome {
 
   repository {
-    source   => 'square/maximum-awesome',
-    provider => 'git',
-    path     => "${boxen::config::srcdir}/maximumawesome"
+    'maximumawesome':
+      source   => 'square/maximum-awesome',
+      provider => 'git',
+      path     => "${boxen::config::srcdir}/maximumawesome"
   }
 
   exec { "rake":
