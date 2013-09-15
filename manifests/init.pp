@@ -19,7 +19,7 @@ class maximumawesome( $repo = 'square/maximum-awesome' ) {
 
   exec { 'rake':
     command => "cd ${::boxen_srcdir}/maximumawesome && rake",
-    creates => "${::boxen_home}/.vim",
+    creates => "${::boxen_home}/.vimrc",
     require => [
       Repository['maximumawesome']
     ]
