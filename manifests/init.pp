@@ -1,8 +1,8 @@
-class maximumawesome {
+class maximumawesome( $repo = 'square/maximum-awesome' ) {
 
   repository {
     'maximumawesome':
-      source   => 'square/maximum-awesome',
+      source   => $repo,
       provider => 'git',
       path     => "${::boxen_srcdir}/maximumawesome"
   }
