@@ -6,8 +6,7 @@ describe 'maximumawesome' do
   let :facts do
     {
       :boxen_user   => 'drew',
-      :boxen_srcdir => '/Users/drew/src',
-      :boxen_home   => '/Users/drew'
+      :boxen_srcdir => '/Users/drew/src'
     }
   end
 
@@ -19,8 +18,8 @@ describe 'maximumawesome' do
     })
 
     should contain_exec('rake').with({
-      :command => 'cd /Users/drew/src/maximumawesome && rake',
-      :creates => '/Users/drew/.vim'
+      :cwd => '/Users/drew/src/maximumawesome',
+      :creates => '/Users/drew/.vimrc'
     })
   end
 end
