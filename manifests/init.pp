@@ -4,12 +4,15 @@ class maximumawesome {
     'maximumawesome':
       source   => 'square/maximum-awesome',
       provider => 'git',
-      path     => "${boxen::config::srcdir}/maximumawesome"
+      path     => "${::boxen_srcdir}/maximumawesome"
   }
 
   exec { "rake":
-    command => "cd ${boxen::config::srcdir}/maximumawesome && rake",
-    creates => "${boxen::config::srcdir}/.vim"
+    command => "cd ${::boxen_srcdir}/maximumawesome && rake",
+    creates => "${::boxen_home}/.vim",
+    require => [
+      Repository["maximumawesome"]
+    ]
   }
 
 }
