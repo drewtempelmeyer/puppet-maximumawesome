@@ -1,22 +1,25 @@
-# Template Puppet Module for Boxen
+# puppet-maximumawesome
 
-An example of how we write Puppet modules for Boxen. Replace this
-paragraph with a short explanation of what the heck makes your module
-useful.
+Sets up [maximum-awesome](https://github.com/square/maximum-awesome) for you so you don't have to.
 
-A great module has a working travis build
-
-[![Build Status](https://travis-ci.org/boxen/puppet-template.png?branch=master)](https://travis-ci.org/boxen/puppet-template)
+[![Build Status](https://travis-ci.org/drewtempelmeyer/puppet-maximumawesome.png?branch=master)](https://travis-ci.org/drewtempelmeyer/puppet-maximumawesome)
 
 ## Usage
 
-```puppet
-boxen::example { 'best example ever':
-  salutation => 'fam'
+To use the default maximum-awesome repository, simply
+
+`include maximumawesome`
+
+To use a fork of maximum-awesome
+
+```
+class {'maximumawesome':
+	repo => 'drewtempelmeyer/vimfiles'
 }
 ```
+
 
 ## Required Puppet Modules
 
 * `boxen`
-* `repository`
+* `boxen-repository`
