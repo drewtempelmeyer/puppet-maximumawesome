@@ -1,3 +1,13 @@
+# Installs square/maximum-awesome
+
+# Examples
+#
+#   include maximumawesome
+#
+#   class { 'maximumawesome':
+#     repo => 'drewtempelmeyer/vimfiles'
+#   }
+#
 class maximumawesome( $repo = 'square/maximum-awesome' ) {
 
   repository {
@@ -7,11 +17,11 @@ class maximumawesome( $repo = 'square/maximum-awesome' ) {
       path     => "${::boxen_srcdir}/maximumawesome"
   }
 
-  exec { "rake":
+  exec { 'rake':
     command => "cd ${::boxen_srcdir}/maximumawesome && rake",
     creates => "${::boxen_home}/.vim",
     require => [
-      Repository["maximumawesome"]
+      Repository['maximumawesome']
     ]
   }
 
