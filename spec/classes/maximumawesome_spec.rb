@@ -12,7 +12,11 @@ describe 'maximumawesome' do
   end
 
   it do
-    should contain_repository('maximumawesome')
+    should contain_repository('maximumawesome').with({
+      :source   => 'square/maximum-awesome',
+      :provider => 'git',
+      :path     => '/Users/drew/src/maximumawesome'
+    })
 
     should contain_exec('rake').with({
       :command => 'cd /Users/drew/src/maximumawesome && rake',
